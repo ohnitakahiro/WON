@@ -4,24 +4,34 @@
     <title>WorkOutNote</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header class="Header">
-      <div class="Header__MyImg"><img src="app/assets/images/test_image.jpg">画像</div>
+      <div class="Header__MyImg">
+      <%# app/assets/images %>
+      <%= image_tag "test_image.jpg", alt: "icon", id: "assets", class: "Header__MyImg" %>
+      </div>
       <div class="Header__Logo">WON</div>
     </header>
 
     <%= yield %>
 
     <footer class="Footer">
-      <div class="Footer__HomeIcon"><i class="fas fa-home"></i></div>
-      <div class="Footer__CalenderIcon"><i class="far fa-calendar-alt"></i></div>
+
+      <%= link_to  root_path , id: "HomeIcon"  do %>
+        <i class="fas fa-home"></i>
+      <% end %>
+
+      <%= link_to  "#", id: "CalenderIcon"  do %>
+        <i class="far fa-calendar-alt"></i>
+      <% end %>
 
     </footer>
   

@@ -1,5 +1,6 @@
 @import "reset";
 @import "new";
+@import "show";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -17,11 +18,8 @@
   width: 100%;
 
   &__MyImg{
-    background-color: white;
     border-radius: 50%;
-    text-align: center;
     height: 60px;
-    line-height: 60px;
     width: 60px;
   }
   &__Logo{
@@ -34,7 +32,6 @@
   align-items: center;
   background-color: black;
   border-top: 1px solid gray;
-  color: green;
   display: flex;
   height: 100px;
   justify-content: space-between;
@@ -43,26 +40,33 @@
   bottom: 0;
   width: 100%;
   font-size: 40px;
+  a{
+    color: green;
+  }
+
 }
 
 .Main{
-  color: white;
-  padding-top:100px;
+  color: white ;
+  margin:100px 0;
   background-color: black;
   overflow: scroll;
+  .show-link a{
+    text-decoration: none;
+  }
   .Content{
     display: flex;
     padding: 15px;
+    color: white !important;
     background-color: black;
     border-top: 1px solid gray;
+    &:hover{
+      background-color: rgba($color: #292929, $alpha: 0.7);
+    }
     &__MyImg{
-      background-color: white;
-      color: green;
       border-radius: 50%;
-      text-align: center;
-      height: 60px;
-      line-height: 60px;
-      width: 60px;
+      height: 120px;
+      width: 120px;
     }
     &__Body{
       padding-left: 10px;
@@ -71,6 +75,9 @@
         display: flex;
         justify-content: space-between;
         padding-bottom: 15px;
+        &__Name{
+          font-size: 24px;
+        }
         &__Date{
           color: gray;
         }

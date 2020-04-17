@@ -1,5 +1,5 @@
 class RecordsController < ApplicationController
-  # before_action :set_record1, only: [:edit, :show]
+  before_action :set_record, only: :show
   # before_action :move_to_index, except: [:index, :show, :search]
 
   def index
@@ -16,10 +16,11 @@ class RecordsController < ApplicationController
     redirect_to action: :index
   end
 
-  # def destroy
-  #   tweet = Tweet.find(params[:id])
-  #   tweet.destroy
-  # end
+  def destroy
+    record = Record.find(params[:id])
+    record.destroy
+    redirect_to action: :index
+  end
 
   # def edit
   # end
@@ -29,10 +30,10 @@ class RecordsController < ApplicationController
   #   tweet.update(tweet_params)
   # end
 
-  # def show
-  #   @comment = Comment.new
-  #   @comments = @tweet.comments.includes(:user)
-  # end
+  def show
+    # @comment = Comment.new
+    # @comments = @tweet.comments.includes(:user)
+  end
 
   private
   def record_params

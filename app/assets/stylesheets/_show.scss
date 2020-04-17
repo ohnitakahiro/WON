@@ -1,0 +1,41 @@
+.show{
+  width: 100%;
+  background-color: black;
+  height: 100%;
+  padding: 100px 0 100px 0;
+  .Content{
+    display: flex;
+    padding: 15px;
+    color: white !important;
+    background-color: black;
+    border-top: 1px solid gray;
+    &:hover{
+      background-color: rgba($color: #292929, $alpha: 0.7);
+    }
+    &__MyImg{
+      border-radius: 50%;
+      height: 150px;
+      width: 150px;
+    }
+    &__Body{
+      padding-left: 10px;
+      width: 100%;
+      &__Info{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 15px;
+        &__Name{
+          font-size: 40px;
+          line-height: 150px;
+        }
+        &__Date{
+          color: gray;
+        }
+      }
+    }
+    &__Text{
+      font-size: 22px;
+      color: white;
+    }
+  }
+}

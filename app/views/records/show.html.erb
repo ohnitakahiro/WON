@@ -1,4 +1,4 @@
-<%= link_to "/records/#{record.id}", class: "show-link", method: :get do %>
+<div class ="show">
   <div class="Content">
     <div class="Content__MyImg">
       <%= image_tag "test_image.jpg", alt: "icon", id: "assets", class: "Content__MyImg" %>
@@ -11,9 +11,14 @@
           <%# <%= link_to '削除', "/records/#{record.id}", method: :delete %> %>
         </div>
       </div>
-      <div class="Content__Body__TextField">
-        <%= simple_format(record.text) %>
-      </div>
     </div>
   </div>
-<% end %>
+
+  <div class="Content__Text">
+    <%= simple_format(@record.text) %>
+    <%= link_to '削除', "/records/#{@record.id}", method: :delete %>
+    <span class="name"><%= @record.name %>
+    </span>
+  </div>
+
+</div>
