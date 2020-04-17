@@ -4,6 +4,7 @@ class CreateRecords < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :text
       t.text :image
+      t.integer :user_id
 
       t.timestamps
     end

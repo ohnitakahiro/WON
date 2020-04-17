@@ -14,10 +14,16 @@
 
   <body>
     <header class="Header">
-      <div class="Header__MyImg">
-      <%# app/assets/images %>
-      <%= image_tag "test_image.jpg", alt: "icon", id: "assets", class: "Header__MyImg" %>
-      </div>
+      <% if user_signed_in? %>
+        <%= link_to  "/users/#{current_user.id}" , class: "Header__MyImg"  do %>
+          <div class="Header__MyImg">
+            <%= image_tag "test_image.jpg", alt: "icon", id: "assets", class: "Header__MyImg" %>
+          </div> 
+        <% end %>
+      <% end %>
+    
+      
+
       <div class="Header__Logo">WON</div>
     </header>
 

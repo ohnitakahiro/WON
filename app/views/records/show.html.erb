@@ -16,9 +16,10 @@
 
   <div class="Content__Text">
     <%= simple_format(@record.text) %>
-    <%= link_to '削除', "/records/#{@record.id}", method: :delete %>
-    <span class="name"><%= @record.name %>
-    </span>
+    <% if user_signed_in? && current_user.id == @record.user_id %>
+        <%= link_to '削除', "/records/#{@record.id}", method: :delete %>
+      <% end %>
+    
   </div>
 
 </div>

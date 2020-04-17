@@ -22,14 +22,6 @@ class RecordsController < ApplicationController
     redirect_to action: :index
   end
 
-  # def edit
-  # end
-
-  # def update
-  #   tweet = Tweet.find(params[:id])
-  #   tweet.update(tweet_params)
-  # end
-
   def show
     # @comment = Comment.new
     # @comments = @tweet.comments.includes(:user)
@@ -37,8 +29,7 @@ class RecordsController < ApplicationController
 
   private
   def record_params
-    params.require(:record).permit(:image, :text)
-    # .merge(user_id: current_user.id)
+    params.require(:record).permit(:image, :text).merge(user_id: current_user.id)
   end
 
   def set_record

@@ -1,0 +1,6 @@
+<div class="Main">
+  <% @records.each do |record| %>
+    <%= render partial: "records/record", locals: { record: record } %>
+  <% end %>
+
+</div>
