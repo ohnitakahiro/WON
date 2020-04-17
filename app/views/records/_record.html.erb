@@ -1,0 +1,14 @@
+<div class="Content">
+  <div class="Content__MyImg"><img src="app/assets/images/test_image.jpg">画像</div>
+  <div class="Content__Body">
+    <div class="Content__Body__Info">
+      <div class="Content__Body__Info__Name">大仁</div>
+      <div class="Content__Body__Info__Date">
+        <%# <%= message.created_at.strftime("%Y年%m月%d日 %H時%M分") %> %>
+      </div>
+    </div>
+    <div class="Content__Body__TextField">
+      <%= simple_format(record.text) %>
+    </div>
+  </div>
+</div>

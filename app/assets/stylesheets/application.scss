@@ -1,0 +1,96 @@
+@import "reset";
+@import "new";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.Header{
+  align-items: center;
+  background-color: black;
+  border-bottom: 1px solid gray;
+  color: green;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  &__MyImg{
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    width: 60px;
+  }
+  &__Logo{
+    font-size: 50px;
+    font-family: cursive;
+  }
+}
+
+.Footer{
+  align-items: center;
+  background-color: black;
+  border-top: 1px solid gray;
+  color: green;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  padding: 50px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 40px;
+}
+
+.Main{
+  color: white;
+  padding-top:100px;
+  background-color: black;
+  overflow: scroll;
+  .Content{
+    display: flex;
+    padding: 15px;
+    background-color: black;
+    border-top: 1px solid gray;
+    &__MyImg{
+      background-color: white;
+      color: green;
+      border-radius: 50%;
+      text-align: center;
+      height: 60px;
+      line-height: 60px;
+      width: 60px;
+    }
+    &__Body{
+      padding-left: 10px;
+      width: 100%;
+      &__Info{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 15px;
+        &__Date{
+          color: gray;
+        }
+      }
+    }
+  }
+  .NewBtn{
+    font-size: 30px;
+    color: black;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 20%;
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+    width: 80px;
+    position: fixed;
+    bottom: 120px;
+    right: 25px;
+    
+  }
+}
+

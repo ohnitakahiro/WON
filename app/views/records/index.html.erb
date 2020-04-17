@@ -1,1 +1,9 @@
-WON!
+<div class="Main">
+  <% @records.each do |record| %>
+    <%= render partial: "record", locals: { record: record } %>
+  <% end %>
+
+  <%= link_to  "/records/new", class: "NewBtn"  do %>
+    <i class="far fa-edit"></i>
+  <% end %>
+</div>

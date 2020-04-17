@@ -1,0 +1,15 @@
+<div class="NewRecord">
+  <div class="TopBar">
+    <div class="TopBar__Cancel">
+    </div>    
+  </div>
+
+  <div class="FormBox">
+    <div class="FormBox__MyImg"></div>
+    <div class="FormBox__Form">
+      <%= form_with(model: @record, local: true) do |form| %>
+        <%= render partial: "form", locals: { form: form } %>
+      <% end %>
+    </div>
+  </div> 
+</div>
