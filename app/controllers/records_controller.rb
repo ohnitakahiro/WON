@@ -1,6 +1,6 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: :show
-  # before_action :move_to_index, except: [:index, :show, :search]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @records = Record.all
@@ -45,7 +45,7 @@ class RecordsController < ApplicationController
     @record = Record.find(params[:id]) 
   end
 
-  # def move_to_index
-  #   redirect_to action: :index unless user_signed_in?
-  # end
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
 end
