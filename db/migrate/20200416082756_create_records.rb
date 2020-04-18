@@ -3,7 +3,7 @@ class CreateRecords < ActiveRecord::Migration[5.2]
     create_table :records do |t|
       t.string :name
       t.string :text
-      t.text :image
+      t.string :image
       t.integer :user_id
 
       t.timestamps

@@ -49,9 +49,10 @@
 
 .Main{
   color: white ;
-  margin:100px 0;
+  padding:100px 0;
   background-color: black;
   overflow: scroll;
+  overflow:hidden;
   .show-link a{
     text-decoration: none;
   }
