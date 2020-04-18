@@ -3,7 +3,8 @@
 
     <%= link_to  "/users/#{@record.user_id}" , class: "Content__MyImg"  do %>
       <div class="Content__MyImg">
-        <%= image_tag "test_image.jpg", alt: "icon", id: "assets", class: "Content__MyImg" %>
+        <img src="<%= 
+      @record.user.image if @record.user.image.present? %>" class="Content__MyImg">
       </div>
     <% end %>
 
