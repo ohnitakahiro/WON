@@ -1,14 +1,18 @@
 <div class ="show">
   <div class="Content">
-    <div class="Content__MyImg">
-      <%= image_tag "test_image.jpg", alt: "icon", id: "assets", class: "Content__MyImg" %>
-    </div>
+
+    <%= link_to  "/users/#{@record.user_id}" , class: "Content__MyImg"  do %>
+      <div class="Content__MyImg">
+        <%= image_tag "test_image.jpg", alt: "icon", id: "assets", class: "Content__MyImg" %>
+      </div>
+    <% end %>
+
     <div class="Content__Body">
       <div class="Content__Body__Info">
-        <div class="Content__Body__Info__Name">大仁</div>
+        <div class="Content__Body__Info__Name"><%= @record.user.name %></div>
         <div class="Content__Body__Info__Date">
           <%# <%= message.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
-          <%# <%= link_to '削除', "/records/#{record.id}", method: :delete %> %>
+          <%# <%= link_to '削除', "/records/#{record.id}", method: :delete %>
         </div>
       </div>
     </div>

@@ -3,8 +3,7 @@ class RecordsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @records = Record.all
-    # includes(:user).order("created_at DESC").page(params[:page])
+    @records = Record.all.includes(:user).order("created_at DESC")
   end
 
   def new
