@@ -1,0 +1,19 @@
+.calender{
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+  top: 100px;
+  background-color: #000000;
+  overflow: scroll;
+  .Cancel{
+    position: fixed;
+    top: 90px;
+    right: 200px;
+    font-size: 40px;
+    &:hover{
+      color: gray;
+      cursor: pointer;
+    }
+  }
+}

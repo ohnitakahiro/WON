@@ -17,13 +17,23 @@
 //= require activestorage
 
 //= require_tree .
+
+// ボタンを押したときのアクション
 $(function(){
   $('#NewRecordBtn').click(function(){
     $('#NewRecord').fadeIn();
   });
 
-  $('#Cancel').click(function(){
+  $('.Cancel').click(function(){
     $('#NewRecord').fadeOut();
+  });
+
+  $('#CalenderIcon').click(function(){
+    $('#calendar').fadeIn();
+  });
+
+  $('.Cancel').click(function(){
+    $('#calendar').fadeOut();
   });
 
   jQuery(function($) {
@@ -42,10 +52,12 @@ $(function(){
         }, 500);
         return false;
     });
+
 });
 
 
 });
+
 
 $(function () {
   $('#calendar').fullCalendar({
