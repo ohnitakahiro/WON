@@ -7,6 +7,7 @@ class User < ApplicationRecord
   
   has_many :records
   validates :name, presence: true, length: { maximum: 6 }
+  validates :image, presence: true
 
   mount_uploader :image, ImageUploader
 end

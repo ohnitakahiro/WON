@@ -1,6 +1,7 @@
-# json.array!(@records) do |record|
-#   json.extract! record, :id, :title, :description   
-#   json.start record.start_date   
-#   json.end record.end_date   
-#   json.url record_url(record, format: :html) 
-# end
+json.array!(@user_events) do |event|
+  json.id "#{event.id}"
+  json.title "#{event.name}"
+  json.start event.start_date
+  json.end event.end_date
+  json.url root_url(format: :html)
+end

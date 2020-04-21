@@ -1,7 +1,9 @@
+<div class="user_show">
+  <%= @name %>さんの投稿一覧
+</div>
 <div class="Main">
-  <p><%= @name %>さんの投稿一覧</p>
   <% @records.each do |record| %>
     <%= render partial: "records/record", locals: { record: record } %>
   <% end %>
-  <a href="#" id="btn_scroll_top"></a>
+
 </div>
