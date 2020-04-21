@@ -120,8 +120,43 @@
     cursor: pointer;
     
   }
+  
 }
 .hidden{
   display: none;
 }
 
+#btn_scroll_top {
+  display: none;
+  position: fixed;
+  bottom: 130px;
+  right: 230px;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  text-decoration: none;
+  outline: none;
+  border-radius: 50%;
+}
+#btn_scroll_top:after {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translateX(-50%) rotate(-45deg);
+  border-right: 4px solid #fff;
+  border-top: 4px solid #fff;
+  content: "";
+}
+@media print, (min-width: 768px) {
+  #btn_scroll_top {
+      width: 70px;
+      height: 70px;
+  }
+  #btn_scroll_top:after {
+      width: 20px;
+      height: 20px;
+  }
+}

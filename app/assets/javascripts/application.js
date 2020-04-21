@@ -26,12 +26,23 @@ $(function(){
     $('#NewRecord').fadeOut();
   });
 
-  $('#top').click(function(){
-    $('.Main').animate({ scrollTop:200});
-  });
-
-  
-
+  jQuery(function($) {
+    var topBtn = $('#btn_scroll_top');
+    topBtn.hide();
+    $(window).scroll(function() {
+        if( $(this).scrollTop() > 100 ) {
+            topBtn.fadeIn();
+        } else {
+            topBtn.fadeOut();
+        }
+    });
+    topBtn.click(function() {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
 
 
 });
@@ -39,5 +50,8 @@ $(function(){
 $(function () {
   $('#calendar').fullCalendar({
   events: '/records.json'
+  });
+  $('#NewRecordBtn').click(function(){
+    $('#calendar').fadeIn();
   });
 });
