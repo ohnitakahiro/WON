@@ -4,6 +4,7 @@ class RecordsController < ApplicationController
 
   def index
     @records = Record.all.includes(:user).order("created_at DESC")
+    new
   end
 
   def new

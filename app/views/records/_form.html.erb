@@ -1,3 +1,11 @@
-<%= form.file_field :image, placeholder: "Image", id: "image" %>
-<%= form.text_area :text, placeholder: "トレーニングの記録を残そう！" , rows: "10", id: "text" %>
-<%= form.submit "NEW RECORD" %>
+<div class="input">
+  <%= form.text_area :text, placholder: "トレーニングの記録を残そう！" , rows: "7", id: "text" %>
+</div>
+
+<div class="input">
+  <%= form.file_field :image, placeholder: "Image", id: "image" %>
+</div>
+
+<div class="input">
+  <%= form.submit "NEW RECORD" , id: "Newrecord"%>
+</div>

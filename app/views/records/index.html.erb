@@ -3,7 +3,32 @@
     <%= render partial: "record", locals: { record: record } %>
   <% end %>
 
-  <%= link_to  "/records/new", class: "NewBtn"  do %>
+  <div class="NewBtn" id="NewRecordBtn">
     <i class="far fa-edit"></i>
-  <% end %>
+
+  </div>
+  <%# <=# link_to  "/records/new", class: "NewBtn"  do %> 
+  <%# end %>
+
+<%# <%# <div id="calendar" class="hidden"></div> %>
+
+
 </div>
+
+<div class="NewRecord" id="NewRecord">
+  <div class="NewRecord＿Box">
+    <div class="Cancel" id="Cancel">
+      <i class="far fa-times-circle"></i>
+    </div>    
+    <h1>トレーニングを記録する</h1>
+    <div class="NewRecord＿Box＿Form">
+      <%= form_with(model: @record, local: true, url: "/records") do |form| %>
+        <%= render partial: "form", locals: { form: form } %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
