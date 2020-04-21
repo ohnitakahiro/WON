@@ -58,6 +58,9 @@ $(function(){
 });
 
 
+//= require jquery
+//= require moment
+//= require fullcalendar
 
 $(function () {
   // 画面遷移を検知
@@ -79,7 +82,7 @@ $(function () {
 
           //events: '/events.json', 以下に追加
           $('#calendar').fullCalendar({
-              records: '/events.json',
+              events: '/events.json',
               //カレンダー上部を年月で表示させる
               titleFormat: 'YYYY年 M月',
               //曜日を日本語表示
@@ -114,7 +117,6 @@ $(function () {
                   element.css("font-size", "0.8em");
                   element.css("padding", "5px");
               }
-              
           });
       }
   });

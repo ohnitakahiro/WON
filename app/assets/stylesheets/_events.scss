@@ -1,0 +1,15 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.Calender{
+  height: calc(100% - 200px);
+  padding: 0 20px 0 20px;
+  position: fixed;
+  top: 100px;
+  color: #ffffff;
+  background-color: #000000;
+  overflow: scroll;
+}
+.event{
+  padding: 100px 100px 100px 100px;
+}
