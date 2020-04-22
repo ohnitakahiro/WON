@@ -5,6 +5,8 @@
   <% @events.each do |event| %>
     <%= render partial: "events/event", locals: { event: event } %>
   <% end %>
+</div>
 
 <%= render partial: "calender", locals: { events: @events } %>
-</div>
+
+<a href="#" id="btn_scroll_top"></a>
