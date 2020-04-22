@@ -18,6 +18,12 @@
   </head>
 
   <body data-turbolinks="false">
+    <% if notice%>
+      <div id="notice">
+        <%= notice %>
+      </div>
+    <% end %>
+    
     <header class="Header">
       <% if user_signed_in? %>
         <%= link_to  "/users/#{current_user.id}" , class: "Header__MyImg"  do %>
@@ -47,12 +53,13 @@
         <i class="fas fa-home"></i>
       <% end %>
 
-      <% if current_page?(root_path) %>
-        <div class="CalenderIcon" id="CalenderIcon">
-          <i class="far fa-calendar-alt"></i>
-        </div>
+      <% if user_signed_in? %>
+        <% if current_page?(current_user) && current_page?(controller: 'users', action: 'show') %>
+          <div class="CalenderIcon" id="CalenderIcon">
+            <i class="far fa-calendar-alt"></i>
+          </div>
+        <% end %> 
       <% end %>
-
 
       <%= link_to  destroy_user_session_path, id: "SignOutIcon",  method: :delete  do %>
         <i class="fas fa-sign-out-alt"></i>

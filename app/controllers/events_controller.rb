@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all.includes(:user).order("created_at DESC")
+    @events = Event.all.includes(:user).order("end_date DESC")
     new
   end
 
@@ -26,6 +26,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    index
     @event = Event.new(event_params)
 
     respond_to do |format|
@@ -33,7 +34,7 @@ class EventsController < ApplicationController
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
-        format.html { render :new }
+        format.html { redirect_to root_path, notice: '※投稿失敗（本文が空白です。）' }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
@@ -58,9 +59,10 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
+    
   end
 
   private

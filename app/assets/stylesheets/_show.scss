@@ -1,4 +1,4 @@
-.show{
+.Show{
   width: 100%;
   background-color: black;
   height: 100%;
@@ -30,12 +30,37 @@
         }
         &__Date{
           color: gray;
+          font-size: 16px;
+        }
+        &__Option{
+          position: absolute;
+          font-size: 20px;
+          top: 240px;
+          right: 20px;
         }
       }
     }
-    &__Text{
+  }
+  &__Main{
+    padding: 30px;
+    &__Title{
+      h1{
+        font-size: 40px;
+        color: white;
+      }
+      
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba($color: #5f5f5f, $alpha: 1.0);
+    }
+    &__Body p{
       font-size: 22px;
       color: white;
+      display: inline-block;
+      margin-bottom: 20px;
+
+    }
+    &__Img{
+      margin: 0 auto;
     }
   }
 }

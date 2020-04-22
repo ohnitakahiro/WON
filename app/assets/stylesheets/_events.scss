@@ -3,8 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .Calender{
   display: none;
+  z-index: 1;
   height: calc(100% - 200px);
-  padding: 0 20px 0 20px;
+  padding: 0 30px 0 30px;
   position: fixed;
   top: 100px;
   color: #ffffff;

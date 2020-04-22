@@ -8,10 +8,11 @@
       <div class="Content__Body__Info">
         <div class="Content__Body__Info__Name"><%= event.user.name %></div>
         <div class="Content__Body__Info__Date">
-          <%= l event.created_at , format: :short %>
+          終了日：<%= l event.end_date , format: :short %>
         </div>
       </div>
       <div class="Content__Body__TextField">
+        <%= event.title %>
         <%= simple_format(event.body) %>
         <img src="<%= event.image if event.image.present? %>">
       </div>

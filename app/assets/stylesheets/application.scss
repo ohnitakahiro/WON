@@ -21,9 +21,23 @@
 @import "show";
 @import "user";
 @import "events";
+@import "edit";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+#notice{
+  color: white !important;
+  background-color: green;
+  display: block;
+  z-index: 100;
+  width: 100%;
+  height: 20px;
+  position: fixed;
+  font-size: 18px;
+  top: 0;
+  text-align: center;
+  line-height: 20px;
+}
 
 .Header{
   align-items: center;
@@ -114,6 +128,9 @@
         }
         &__Date{
           color: gray;
+        }
+        &__TextField{
+          font-size: 30px !important;
         }
       }
     }

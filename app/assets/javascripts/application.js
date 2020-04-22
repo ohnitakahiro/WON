@@ -28,6 +28,14 @@ $(function(){
     $('#NewRecord').fadeOut();
   });
 
+  $('#EditBtn').click(function(){
+    $('#EditRecord').fadeIn();
+  });
+
+  $('.Cancel').click(function(){
+    $('#EditRecord').fadeOut();
+  });
+
   $('#CalenderIcon').click(function(){
     $('#Calender-show').fadeIn();
   });

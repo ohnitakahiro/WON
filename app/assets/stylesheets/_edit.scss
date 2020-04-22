@@ -1,4 +1,4 @@
-.NewRecord{
+.EditRecord{
   display: none;
   height: 100%;
   width: 100%;
@@ -8,7 +8,7 @@
   background-color: rgba($color: #000000, $alpha: 0.8);
   color: #000;
 }
-.NewRecord＿Box{
+.EditRecord＿Box{
   width: 70%;
   height: 70%;
   background-color: rgb(219, 219, 219);
@@ -46,7 +46,7 @@
 #text{
   width: 100%;
 }
-#Newrecord{
+#Editrecord{
   height: 50px;
   width: 150px;
   border-radius: 10px;

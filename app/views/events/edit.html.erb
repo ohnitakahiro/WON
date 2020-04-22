@@ -1,8 +1,11 @@
-<div class="event">
-  <h1>Editing Event</h1>
-
-  <%= render 'form', event: @event %>
-
-  <%= link_to 'Show', @event %> |
-  <%= link_to 'Back', events_path %>
-</div>
+<div class="NewRecord" id="NewRecord">
+    <div class="NewRecord＿Box">
+      <div class="Cancel" id="Cancel">
+        <i class="far fa-times-circle"></i>
+      </div>    
+      <h1>トレーニングを編集する</h1>
+      <div class="NewRecord＿Box＿Form">
+        <%= render 'form', event: @event %>
+      </div>
+    </div>
+  </div>

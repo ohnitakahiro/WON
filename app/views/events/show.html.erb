@@ -1,26 +1,53 @@
-<div class="event">
-  <p id="notice"><%= notice %></p>
+<div class ="Show">
+  <div class="Content">
 
-  <p>
-    <strong>Title:</strong>
-    <%= @event.title %>
-  </p>
+    <%= link_to  "/users/#{@event.user_id}" , class: "Content__MyImg"  do %>
+      <div class="Content__MyImg">
+        <img src="<%= 
+      @event.user.image if @event.user.image.present? %>" class="Content__MyImg">
+      </div>
+    <% end %>
 
-  <p>
-    <strong>Body:</strong>
-    <%= @event.body %>
-  </p>
+    <div class="Content__Body">
+      <div class="Content__Body__Info">
+        <div class="Content__Body__Info__Name"><%= @event.user.name %></div>
+        <div class="Content__Body__Info__Date">
+          投稿日時：<%= l @event.created_at %><br>
+          開始日時：<%= l @event.start_date %><br>
+          終了日時：<%= l @event.end_date %>
+        </div>
+        <div class="Content__Body__Info__Option">
+           <% if user_signed_in? && current_user.id == @event.user_id %>
+              <a href="#" id="EditBtn">編集</a> |
+              <%= link_to '削除', "/events/#{@event.id}", method: :delete %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Show__Main">
+    <div class="Show__Main__Title">
+      <h1><%= @event.title %></h1>
+    </div>
+    <div class="Show__Main__Body">
+      <%= simple_format(@event.body) %>
+    </div>
+    <div class="Show__Main__Img">
+      <img src="<%= @event.image if @event.image.present? %>">
+    </div>
+  </div>
 
-  <p>
-    <strong>Start date:</strong>
-    <%= @event.start_date %>
-  </p>
-
-  <p>
-    <strong>End date:</strong>
-    <%= @event.end_date %>
-  </p>
-
-  <%= link_to 'Edit', edit_event_path(@event) %> |
-  <%= link_to 'Back', events_path %>
 </div>
+
+
+<div class="EditRecord" id="EditRecord">
+    <div class="EditRecord＿Box">
+      <div class="Cancel" id="Cancel">
+        <i class="far fa-times-circle"></i>
+      </div>    
+      <h1>トレーニングを編集する</h1>
+      <div class="EditRecord＿Box＿Form">
+        <%= render 'form', event: @event %>
+      </div>
+    </div>
+  </div>
