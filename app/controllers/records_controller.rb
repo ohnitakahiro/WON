@@ -4,7 +4,6 @@ class RecordsController < ApplicationController
 
   def index
     @records = Record.all.includes(:user).order("created_at DESC")
-    @events = Record.where(user_id: current_user)
 
     new
   end

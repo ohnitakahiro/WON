@@ -29,11 +29,11 @@ $(function(){
   });
 
   $('#CalenderIcon').click(function(){
-    $('#calendar').fadeIn();
+    $('#Calender-show').fadeIn();
   });
 
   $('.Cancel').click(function(){
-    $('#calendar').fadeOut();
+    $('#Calender-show').fadeOut();
   });
 
   jQuery(function($) {

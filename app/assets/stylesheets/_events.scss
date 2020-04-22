@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .Calender{
+  display: none;
   height: calc(100% - 200px);
   padding: 0 20px 0 20px;
   position: fixed;

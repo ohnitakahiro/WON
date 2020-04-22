@@ -1,0 +1,20 @@
+<%= link_to "/events/#{event.id}", class: "show-link", method: :get do %>
+  <div class="Content">
+    <div class="Content__MyImg">
+      <img src="<%= 
+      event.user.image if event.user.image.present? %>" class="Content__MyImg">
+    </div>
+    <div class="Content__Body">
+      <div class="Content__Body__Info">
+        <div class="Content__Body__Info__Name"><%= event.user.name %></div>
+        <div class="Content__Body__Info__Date">
+          <%= l event.created_at , format: :short %>
+        </div>
+      </div>
+      <div class="Content__Body__TextField">
+        <%= simple_format(event.body) %>
+        <img src="<%= event.image if event.image.present? %>">
+      </div>
+    </div>
+  </div>
+<% end %>

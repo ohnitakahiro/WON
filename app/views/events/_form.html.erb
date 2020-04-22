@@ -1,3 +1,5 @@
+<div class="NewRecord＿Box">
+
 <%= form_with(model: event, local: true) do |form| %>
   <% if event.errors.any? %>
     <div id="error_explanation">
@@ -18,8 +20,14 @@
 
   <div class="field">
     <%= form.label :body %>
-    <%= form.text_field :body %>
+    <%= form.text_field :body, placholder: "トレーニングの記録を残そう！" , id: "body"%>
   </div>
+
+  <div class="input">
+    <%= form.file_field :image, placeholder: "Image", id: "image" %>
+  </div>
+
+
 
   <div class="field">
     <%= form.label :start_date %>
@@ -31,7 +39,9 @@
     <%= form.datetime_select :end_date %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="input">
+    <%= form.submit "NEW WORK OUT" , id: "Newrecord"%>
   </div>
+
 <% end %>
+</div>
