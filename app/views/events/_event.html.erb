@@ -17,5 +17,7 @@
         <img src="<%= event.image if event.image.present? %>">
       </div>
     </div>
+    <%# いいね %>
+    (<%= event.liked_users.count %>)
   </div>
 <% end %>

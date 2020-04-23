@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   end
    resources :relationships,   only: [:create, :destroy]
    root to: "events#index"
-   resources :events
+   resources :events do
+    resources :likes, only: [:create, :destroy]
+  end
    resources :records  ,except: [:edit, :update]   
 end

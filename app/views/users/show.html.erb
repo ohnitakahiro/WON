@@ -10,7 +10,17 @@
   <% @events.each do |event| %>
     <%= render partial: "events/event", locals: { event: event } %>
   <% end %>
+  <%# いいね %>
+  <h3>いいねしている投稿</h3>
+  <% @user.liked_events.each do |event| %>
+    <%= event.user.name %>
+    <%= event.title %>
+  <% end %>
+  <%# いいね %>
+
+
 </div>
+
 
 <%= render partial: "calender", locals: { events: @events } %>
 

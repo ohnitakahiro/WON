@@ -37,7 +37,10 @@ class User < ApplicationRecord
 
   # いいね
   has_many :likes, dependent: :destroy
-  has_many :liked_posts, through: :likes, source: :post
+  has_many :liked_events, through: :likes, source: :event
+  def already_liked?(event)
+    self.likes.exists?(event_id: event.id)
+  end
 
   mount_uploader :image, ImageUploader
 end
