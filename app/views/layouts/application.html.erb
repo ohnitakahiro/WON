@@ -36,7 +36,7 @@
       <% if user_signed_in? %>
         <% if current_page?(current_user) && current_page?(controller: 'users', action: 'show') %>
           <%= link_to  "/users/edit" , class: "Header__User"  do %>
-            <div class="Header__User"><i class="far fa-user"></i></div>
+            <div class="Header__User"><i class="fas fa-user-edit"></i></div>
           <% end %> 
         <% end %> 
       <% end %>
@@ -53,13 +53,17 @@
         <i class="fas fa-home"></i>
       <% end %>
 
-      <% if user_signed_in? %>
-        <% if current_page?(current_user) && current_page?(controller: 'users', action: 'show') %>
-          <div class="CalenderIcon" id="CalenderIcon">
-            <i class="far fa-calendar-alt"></i>
-          </div>
-        <% end %> 
+      <%= link_to  users_path , id: "UsersIcon"  do %>
+        <i class="fas fa-users"></i>
       <% end %>
+
+      
+      <% if current_page?(current_user) && current_page?(controller: 'users', action: 'show') %>
+        <div class="CalenderIcon" id="CalenderIcon">
+          <i class="far fa-calendar-alt"></i>
+        </div>
+      <% end %> 
+      
 
       <%= link_to  destroy_user_session_path, id: "SignOutIcon",  method: :delete  do %>
         <i class="fas fa-sign-out-alt"></i>

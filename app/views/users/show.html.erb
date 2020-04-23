@@ -2,6 +2,11 @@
   <%= @name %>さんの投稿一覧
 </div>
 <div class="Main">
+
+  <%= render 'follow_form' %>
+  <%= render 'stats' %>
+
+
   <% @events.each do |event| %>
     <%= render partial: "events/event", locals: { event: event } %>
   <% end %>
