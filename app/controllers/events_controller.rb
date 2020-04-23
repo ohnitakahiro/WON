@@ -1,11 +1,18 @@
-class EventsController < ApplicationController
+class EventsController < UsersController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, except: [:index, :show]
 
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all.includes(:user).order("created_at DESC")
+    @all_events = Event.all.includes(:user)
+    @user = User.find(current_user.id)
+   #フォローしているユーザーを取得
+    @follow_users = @user.followings.map { |f| f[:id] }
+    @follow_users << current_user.id
+    
+   #フォローユーザーのツイートを表示
+    @events = @all_events.where(user_id: @follow_users).order("created_at DESC")
     
     new
   end

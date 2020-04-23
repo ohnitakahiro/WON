@@ -1,0 +1,12 @@
+<div class="Main">
+  <% @user.followers.each do |user| %>
+  <table>
+  <tr>
+    <td>  <img src="<%= user.image %>" class="Content__MyImg"> </td>
+    <td>  <%= user.name %> </td>
+    <td><%= link_to '詳細', user_path(user) %></td>
+  </tr>
+
+  </table>
+  <% end %>
+</div>
