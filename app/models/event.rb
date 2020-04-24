@@ -6,5 +6,7 @@ class Event < ApplicationRecord
   # いいね
   has_many :likes
   has_many :liked_users, through: :likes, source: :user
-  
+  # メニュー
+  has_many :menus
+  accepts_nested_attributes_for :menus
 end

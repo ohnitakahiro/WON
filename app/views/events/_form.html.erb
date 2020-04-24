@@ -27,6 +27,14 @@
     <%= form.file_field :image, placeholder: "Image", id: "image" %>
   </div>
 
+  <div class="field">
+    <%= form.label :menu %>
+    <%= form.fields_for :menus do |menu| %>
+    Name: <%= menu.text_field :name %>
+    Name: <%= menu.text_field :name %>
+    <% end %>
+  </div>
+  
 
 
   <div class="field">
@@ -38,6 +46,7 @@
     <%= form.label :end_date %>
     <%= form.datetime_select :end_date %>
   </div>
+  
 
   <div class="input">
     <%= form.submit "WORK OUTを保存" , id: "Newrecord"%>

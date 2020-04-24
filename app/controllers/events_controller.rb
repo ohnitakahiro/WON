@@ -21,12 +21,12 @@ class EventsController < UsersController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
-    @like = Like.new
   end
 
   # GET /events/new
   def new
     @event = Event.new
+    @event.menus.build
   end
 
   # GET /events/1/edit
@@ -83,7 +83,7 @@ class EventsController < UsersController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:title, :body, :start_date, :end_date, :image).merge(user_id: current_user.id)
+      params.require(:event).permit(:title, :body, :start_date, :end_date, :image, menus_attributes: [:name]).merge(user_id: current_user.id)
     end
 
     def move_to_index

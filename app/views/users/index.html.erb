@@ -1,11 +1,14 @@
 <div class="Main">
   <div class="UsersIndex">
     <% @users.each do |user| %>
+    <% @user = user %>
     <table>
     <tr>
-      <td>  <img src="<%= user.image %>" class="Content__MyImg"> </td>
-      <td>  <%= user.name %> </td>
+      <td>  <img src="<%= @user.image %>" class="Content__MyImg"> </td>
+      <td>  <%= @user.name %> </td>
       <td><%= link_to '詳細', user_path(user) %></td>
+      <td><%= render 'follow_form' %></td>
+
     </tr>
   </div>
   </table>
