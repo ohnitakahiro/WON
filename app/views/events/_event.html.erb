@@ -16,8 +16,10 @@
         <%= simple_format(event.body) %>
         <img src="<%= event.image if event.image.present? %>">
       </div>
+    <div class="Content__Body__Like">
+      <i class="fas fa-thumbs-up"></i> <%= event.liked_users.count %>
+    </div>
     </div>
     <%# いいね %>
-    (<%= event.liked_users.count %>)
   </div>
 <% end %>

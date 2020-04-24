@@ -1,22 +1,40 @@
-<div class="user_show">
-  <%= @name %>さんの投稿一覧
-</div>
 <div class="Main">
-
-  <%= render 'follow_form' %>
-  <%= render 'stats' %>
-
-
+  <div class="User">
+    <div class="User__Profile">
+      <div class="User__Profile__Img">
+      <img src="<%= @user.image %>" class="User__Profile__Img">
+      </div>
+      <div class="User__Profile__Name">
+      <%= @user.name %>
+      </div>
+      <div class="User__Profile__Info">
+        <div class="User__Profile__Info__Date">
+        <%= @user.name %>さんは<%= l @user.created_at , format: :veryshort%>から利用しています
+        </div>
+        <div class="User__Profile__Info__Follow">
+          <%= render 'follow_form' %>
+          <%= render 'stats' %>
+        </div>
+      </div>
+    </div>
+    <div class="User__Like">
+      <%# いいね %>
+      <h3>いいねしている投稿</h3>
+      <% @user.liked_events.each do |event| %>
+        <%= link_to "/events/#{event.id}", class: "show-link", method: :get do %>
+          <%= event.user.name %>
+          <%= event.title %>
+        <% end %>
+      <% end %>
+      <%# いいね %>
+    </div>
+    <div class="event-list">
+    <%= @name %>さんの投稿一覧
+    </div>
+  </div>
   <% @events.each do |event| %>
     <%= render partial: "events/event", locals: { event: event } %>
   <% end %>
-  <%# いいね %>
-  <h3>いいねしている投稿</h3>
-  <% @user.liked_events.each do |event| %>
-    <%= event.user.name %>
-    <%= event.title %>
-  <% end %>
-  <%# いいね %>
 
 
 </div>

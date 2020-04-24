@@ -41,10 +41,10 @@ class EventsController < UsersController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to @event, notice: '記録完了' }
         format.json { render :show, status: :created, location: @event }
       else
-        format.html { redirect_to root_path, notice: '※投稿失敗（本文が空白です。）' }
+        format.html { redirect_to root_path, notice: '※記録失敗（本文が空白です）' }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
@@ -55,7 +55,7 @@ class EventsController < UsersController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to @event, notice: '記録の変更完了' }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit }
@@ -69,7 +69,7 @@ class EventsController < UsersController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: '記録削除' }
       format.json { head :no_content }
     end
     

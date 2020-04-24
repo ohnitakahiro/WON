@@ -19,7 +19,8 @@
 @import "reset";
 @import "new";
 @import "show";
-@import "user";
+@import "users_show";
+@import "users_follow";
 @import "events";
 @import "edit";
 @import "font-awesome-sprockets";
@@ -115,8 +116,8 @@
     }
     &__MyImg{
       border-radius: 50%;
-      height: 120px;
-      width: 120px;
+      height: 100px;
+      width: 100px;
     }
     &__Body{
       padding-left: 10px;
@@ -134,6 +135,10 @@
         &__TextField{
           font-size: 30px !important;
         }
+      }
+      .Content__Body__Like{
+        font-size: 16px;
+        color: green;
       }
     }
   }

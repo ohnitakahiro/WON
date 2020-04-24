@@ -1,0 +1,46 @@
+.contents.row{
+  padding: 100px 0 100px 0;
+}
+.User{
+  padding: 20px;
+  &__Profile{
+
+    display: flex;
+    justify-content: space-between;
+    &__Img{
+      border-radius: 50%;
+      height: 130px;
+      width: 130px;
+    }
+    &__Name{
+      font-size: 80px;
+      line-height: 100px;
+    }
+    &__Info{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-direction: column;
+      &__Date{
+        font-size: 16px;
+      }
+      &__Follow{
+        font-size: 30px;
+      }
+    }
+    
+  }
+  &__Like{
+    font-size: 16px;
+    padding-top: 5px;
+    a{
+      color: white;
+      text-decoration: none;
+    }
+  }
+  .event-list{
+    font-size: 30px;
+    text-align: center;
+  }
+  
+}

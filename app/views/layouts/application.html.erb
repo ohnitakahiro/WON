@@ -57,11 +57,12 @@
         <i class="fas fa-users"></i>
       <% end %>
 
-      
-      <% if current_page?(current_user) && current_page?(controller: 'users', action: 'show') %>
-        <div class="CalenderIcon" id="CalenderIcon">
-          <i class="far fa-calendar-alt"></i>
-        </div>
+      <% if user_signed_in? %>
+        <% if current_page?(current_user) && current_page?(controller: 'users', action: 'show') %>
+          <div class="CalenderIcon" id="CalenderIcon">
+            <i class="far fa-calendar-alt"></i>
+          </div>
+        <% end %> 
       <% end %> 
       
 

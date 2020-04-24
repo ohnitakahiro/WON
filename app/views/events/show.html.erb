@@ -3,8 +3,7 @@
 
     <%= link_to  "/users/#{@event.user_id}" , class: "Content__MyImg"  do %>
       <div class="Content__MyImg">
-        <img src="<%= 
-      @event.user.image if @event.user.image.present? %>" class="Content__MyImg">
+        <img src="<%= @event.user.image %>" class="Content__MyImg">
       </div>
     <% end %>
 
@@ -37,22 +36,19 @@
     </div>
   </div>
   <%# いいね %>
-  <h3>いいね件数: <%= @event.likes.count %></h3>
-  <% if current_user.already_liked?(@event) %>
-    <%= button_to 'いいねを取り消す', event_like_path(@event), method: :delete %>
-  <% else %>
-    <%= button_to 'いいね', event_likes_path(@event) %>
-  <% end %>
-  <h2>いいねしたユーザー</h2>
-  <% @event.liked_users.each do |user| %>
-    <li><%= user.name %></li>
-  <% end %>
+  <div class="Show__Like">
+    <h3>いいね数: <%= @event.likes.count %></h3>
+    <% if current_user.already_liked?(@event) %>
+      <%= button_to 'いいねを取り消す', event_like_path(@event), method: :delete %>
+    <% else %>
+      <%= button_to 'いいね', event_likes_path(@event) %>
+    <% end %>
+    <h2>いいねしたユーザー</h2>
+    <% @event.liked_users.each do |user| %>
+      <li><%= user.name %></li>
+    <% end %>
+  </div>
   <%# いいね %>
-
-
-
-
-
 </div>
 
 
