@@ -32,6 +32,10 @@
     <div class="Show__Main__Body">
       <%= simple_format(@event.body) %>
     </div>
+    <% @event.menus.each do |menu| %>
+      <%= menu.name %>
+      <%= menu.part %>
+    <% end %>
     <div class="Show__Main__Img">
       <img src="<%= @event.image if @event.image.present? %>">
     </div>

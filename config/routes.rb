@@ -5,9 +5,6 @@ Rails.application.routes.draw do
       get :following, :followers
     end
    end
-   namespace :users do
-    resources :searches, only: :index
-  end
    resources :relationships,   only: [:create, :destroy]
    root to: "events#index"
    resources :events do

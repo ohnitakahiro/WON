@@ -30,8 +30,12 @@
   <div class="field">
     <%= form.label :menu %>
     <%= form.fields_for :menus do |menu| %>
-    Name: <%= menu.text_field :name %>
-    Name: <%= menu.text_field :name %>
+    種目名: <%= menu.text_field :name %>
+    部位: <%= menu.text_field :part %>
+      <%= form.fields_for :notes do |note| %>
+      重さ: <%= note.text_field :number %>
+      回数: <%= note.text_field :rep %>
+      <% end %>
     <% end %>
   </div>
   

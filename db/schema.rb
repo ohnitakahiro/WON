@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_074050) do
+ActiveRecord::Schema.define(version: 2020_04_25_102115) do
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 2020_04_24_074050) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "kesu", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "menu_id"
+    t.string "number"
+    t.string "number_unit"
+    t.string "rep"
+    t.string "rep_unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["menu_id"], name: "index_menu_sets_on_menu_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -39,6 +50,17 @@ ActiveRecord::Schema.define(version: 2020_04_24_074050) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_menus_on_event_id"
+  end
+
+  create_table "notes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "menu_id"
+    t.string "number"
+    t.string "number_unit"
+    t.string "rep"
+    t.string "rep_unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["menu_id"], name: "index_notes_on_menu_id"
   end
 
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -65,7 +87,9 @@ ActiveRecord::Schema.define(version: 2020_04_24_074050) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "kesu", "menus"
   add_foreign_key "likes", "events"
   add_foreign_key "likes", "users"
   add_foreign_key "menus", "events"
+  add_foreign_key "notes", "menus"
 end
