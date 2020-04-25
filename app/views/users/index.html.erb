@@ -1,16 +1,26 @@
 <div class="Main">
   <div class="UsersIndex">
+
+  <div class="User-search">
+    <%= form_with url:'/users', method: :get, local: true do |f| %>
+      <%= f.label :name, 'ユーザー名から検索' %>
+      <%= f.text_field :name, id: "user-search-field" %>
+    <% end %>
+  </div>
+  <div id="user-search-result">
+  </div>
+  <div class="User-all" id="User-all">
+    <h1>全てのユーザー</h1>
     <% @users.each do |user| %>
     <% @user = user %>
     <table>
-    <tr>
-      <td>  <img src="<%= @user.image %>" class="Content__MyImg"> </td>
-      <td>  <%= @user.name %> </td>
-      <td><%= link_to '詳細', user_path(user) %></td>
-      <td><%= render 'follow_form' %></td>
-
-    </tr>
-  </div>
-  </table>
+      <tr>
+        <td>  <img src="<%= @user.image %>" class="Content__MyImg"> </td>
+        <td>  <%= @user.name %> </td>
+        <td><%= link_to '詳細', user_path(user) %></td>
+        <td><%= render 'follow_form' %></td>
+      </tr>
+    </table>
   <% end %>
+  </div>
 </div>

@@ -2,11 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .UsersIndex{
-  width: 50%;
+  font-size: 20px;
+  text-align: center;
+  .User-search{
+    margin: 20px auto;
+    width: 300px;
+  }
+  width: 70%;
   margin: 0 auto;
   table{
     border-bottom:solid 1px gray ;
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
+    td{
+      font-size: 18px !important;
+    }
   }
 }

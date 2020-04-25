@@ -30,9 +30,9 @@ class User < ApplicationRecord
      following_relationships.find_by(following_id: other_user.id).destroy
    end
   # ユーザー検索機能
-  def self.search(search)
-    return User.all unless search
-    User.where('name LIKE(?)', "%#{search}%")
+  def self.search(input, id)
+    return nil if input == ""
+    User.where(['name LIKE ?', "%#{input}%"] ).where.not(id: id).limit(10)
   end
 
   # いいね
