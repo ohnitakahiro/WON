@@ -24,6 +24,18 @@ $(function(){
     $('#Calender-show').fadeOut();
   });
 
+  $(function () {
+    $('#Menu_add_btn').click(function() {
+      $("#Menu_form").clone().appendTo('.Menu_addform');
+    });
+  });
+
+  $(function () {
+    $('#Menu_sets_add_btn').click(function() {
+      $(".Menu_form").clone().appendTo('#Menu_form');
+    });
+  });
+
   jQuery(function($) {
     var topBtn = $('#btn_scroll_top');
     topBtn.hide();

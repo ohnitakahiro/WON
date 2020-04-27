@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_25_102115) do
+ActiveRecord::Schema.define(version: 2020_04_26_123457) do
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -23,7 +23,16 @@ ActiveRecord::Schema.define(version: 2020_04_25_102115) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "kesu", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "event_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_likes_on_event_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "menu_sets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "menu_id"
     t.string "number"
     t.string "number_unit"
@@ -32,15 +41,6 @@ ActiveRecord::Schema.define(version: 2020_04_25_102115) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["menu_id"], name: "index_menu_sets_on_menu_id"
-  end
-
-  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "event_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_likes_on_event_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -87,9 +87,9 @@ ActiveRecord::Schema.define(version: 2020_04_25_102115) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "kesu", "menus"
   add_foreign_key "likes", "events"
   add_foreign_key "likes", "users"
+  add_foreign_key "menu_sets", "menus"
   add_foreign_key "menus", "events"
   add_foreign_key "notes", "menus"
 end

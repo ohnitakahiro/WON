@@ -3,24 +3,9 @@
     <%= render partial: "event", locals: { event: event } %>
   <% end %>
 
-  <div class="NewBtn" id="NewRecordBtn">
-    <i class="far fa-edit"></i>
-  </div>
-
-  <div class="NewRecord" id="NewRecord">
-    <div class="NewRecord＿Box">
-      <div class="Cancel" id="Cancel">
-        <i class="far fa-times-circle"></i>
-      </div>    
-      <h1>トレーニングを記録する</h1>
-      <div class="NewRecord＿Box＿Form">
-        <%= render 'form', event: @event %>
-        
-      </div>
-    </div>
-  </div>
-
-
+<%= link_to  new_event_path , id: "NewRecordBtn", class:"NewBtn" do %>
+  <i class="far fa-edit"></i>
+<% end %>
 
 </div>
 

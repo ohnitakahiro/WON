@@ -1,60 +1,66 @@
 <div class="NewRecord＿Box">
+  <%= form_with(model: event, local: true) do |form| %>
+    <% if event.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-<%= form_with(model: event, local: true) do |form| %>
-  <% if event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-      <ul>
-      <% event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_field :body, placholder: "トレーニングの記録を残そう！" , id: "body"%>
-  </div>
-
-  <div class="input">
-    <%= form.file_field :image, placeholder: "Image", id: "image" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :menu %>
-    <%= form.fields_for :menus do |menu| %>
-    種目名: <%= menu.text_field :name %>
-    部位: <%= menu.text_field :part %>
-      <%= form.fields_for :notes do |note| %>
-      重さ: <%= note.text_field :number %>
-      回数: <%= note.text_field :rep %>
-      <% end %>
+        <ul>
+        <% event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
     <% end %>
-  </div>
-  
+
+    <div class="field">
+      <%= form.label :"タイトル" %>
+      <%= form.text_field :title %>
+    </div>
+
+    <div class="field">
+      <%= form.label :"コメント" %>
+      <%= form.text_field :body, placholder: "トレーニングの記録を残そう！" , id: "body"%>
+    </div>
+
+    <div class="field">
+      <%= form.file_field :image, placeholder: "Image", id: "image" %>
+    </div>
+
+    <div class="field" ">
+      <div id="Menu_add_btn" class="btn bg-primary">メニュー追加
+      </div>
+      <div id="Menu_form">
+        <%= form.label :"メニュー内容" %>
+        <%= form.fields_for :menus do |menu| %>
+        種目名: <%= menu.text_field :name %>
+        部位: <%= menu.text_field :part %>
+          <%= menu.fields_for :menu_sets do |menu_set| %>
+          重さ: <%= menu_set.text_field :number %>
+          回数: <%= menu_set.text_field :rep %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="Menu_addform">
+    </div>
+    
 
 
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.datetime_select :start_date %>
-  </div>
+    <div class="Date_form">
+      <div class="field">
+        <%= form.label :start_date %>
+        <%= form.datetime_select :start_date %>
+      </div>
 
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.datetime_select :end_date %>
-  </div>
-  
+      <div class="field">
+        <%= form.label :end_date %>
+        <%= form.datetime_select :end_date %>
+      </div>
+    </div>
 
-  <div class="input">
-    <%= form.submit "WORK OUTを保存" , id: "Newrecord"%>
-  </div>
+    <div class="input">
+      <%= form.submit "WORK OUTを保存" , id: "Newrecord"%>
+    </div>
 
-<% end %>
+  <% end %>
 </div>

@@ -59,6 +59,14 @@
       margin-bottom: 20px;
 
     }
+    &__Menu{
+      color: white;
+      font-size: 18px;
+      margin-bottom: 20px;
+      h2{
+        border-bottom: 1px solid gray;
+      }
+    }
     &__Img{
       margin: 0 auto;
     }

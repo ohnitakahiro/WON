@@ -1,0 +1,33 @@
+<div class="NewRecord＿Box">
+  <%= form_with(model: menu, local: true) do |form| %>
+
+    <div class="field Menu_form">
+      <%= form.label :"メニュー内容" %>
+      <%= form.fields_for :menus do |menu| %>
+      種目名: <%= menu.text_field :name %>
+      部位: <%= menu.text_field :part %>
+        <%= menu.fields_for :menu_sets do |menu_set| %>
+        重さ: <%= menu_set.text_field :number %>
+        回数: <%= menu_set.text_field :rep %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="Date_form">
+      <div class="field">
+        <%= form.label :start_date %>
+        <%= form.datetime_select :start_date %>
+      </div>
+
+      <div class="field">
+        <%= form.label :end_date %>
+        <%= form.datetime_select :end_date %>
+      </div>
+    </div>
+
+    <div class="input">
+      <%= form.submit "メニューを追加" , id: "Menu_add"%>
+    </div>
+
+  <% end %>
+</div>

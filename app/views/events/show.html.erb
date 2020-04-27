@@ -20,7 +20,7 @@
            <% if user_signed_in? && current_user.id == @event.user_id %>
               <a href="#" id="EditBtn">編集</a> |
               <%= link_to '削除', "/events/#{@event.id}", method: :delete %>
-            <% end %>
+           <% end %>
         </div>
       </div>
     </div>
@@ -32,10 +32,17 @@
     <div class="Show__Main__Body">
       <%= simple_format(@event.body) %>
     </div>
-    <% @event.menus.each do |menu| %>
-      <%= menu.name %>
-      <%= menu.part %>
-    <% end %>
+
+    <div class="Show__Main__Menu">
+      <% @event.menus.each do |menu| %>
+        <h2><%= menu.name %></h2><br>
+        <% menu.menu_sets.each do |menu_set| %>
+          <%= menu_set.number %>ｋｇ
+          <%= menu_set.rep %>回
+        <% end %>
+      <% end %>
+    </div>
+
     <div class="Show__Main__Img">
       <img src="<%= @event.image if @event.image.present? %>">
     </div>

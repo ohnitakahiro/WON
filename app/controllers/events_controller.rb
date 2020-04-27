@@ -13,7 +13,6 @@ class EventsController < UsersController
     
    #フォローユーザーのツイートを表示
     @events = @all_events.where(user_id: @follow_users).order("created_at DESC")
-    new
   end
 
   # GET /events/1
@@ -26,7 +25,7 @@ class EventsController < UsersController
   def new
     @event = Event.new
     @menu = @event.menus.build
-    @note = @menu.notes.build
+    @menu_sets = @menu.menu_sets.build
   end
 
   # GET /events/1/edit
@@ -83,7 +82,7 @@ class EventsController < UsersController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:title, :body, :start_date, :end_date, :image, menus_attributes: [:name, :part, notes_attributes:[:number, :number_unit, :rep, :rep_unit]]).merge(user_id: current_user.id)
+      params.require(:event).permit(:title, :body, :start_date, :end_date, :image, menus_attributes: [:name, :part, menu_sets_attributes:[:number, :number_unit, :rep, :rep_unit]]).merge(user_id: current_user.id)
       
     end
 
