@@ -25,16 +25,34 @@ $(function(){
   });
 
   $(function () {
+    var idNo = 1;
     $('#Menu_add_btn').click(function() {
-      $("#Menu_form").clone().appendTo('.Menu_addform');
+      $("div#Menu_TemplateForm")
+      .clone(true)
+      .removeAttr("id")
+            // 非表示解除
+            .removeClass("hide")
+            // テキストボックスのID追加
+            // .find("input[name=templateTextbox]")
+            // .attr("id", "textbox_" + idNo)
+            // .end()
+            // 情報表示
+            // .find("span.dispInfo")
+            // .text("id[" + idNo + "] TextBox_ID[" + "textbox_" + idNo + "] Button_ID:[" + "button_" + idNo + "]")
+            // .end()
+            // 追加処理
+            .appendTo("div#kokoniikitai");
+  
+        // ID番号加算
+        // idNo++;
     });
   });
 
-  $(function () {
-    $('#Menu_sets_add_btn').click(function() {
-      $(".Menu_form").clone().appendTo('#Menu_form');
-    });
-  });
+  // $(function () {
+  //   $('#Menu_sets_add_btn').click(function() {
+  //     $(".Menu_addform").clone().appendTo('#Menu_form_hide');
+  //   });
+  // });
 
   jQuery(function($) {
     var topBtn = $('#btn_scroll_top');

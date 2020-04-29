@@ -8,5 +8,5 @@ class Event < ApplicationRecord
   has_many :liked_users, through: :likes, source: :user
   # メニュー
   has_many :menus
-  accepts_nested_attributes_for :menus
+  accepts_nested_attributes_for :menus, allow_destroy: true
 end

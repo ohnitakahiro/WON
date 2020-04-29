@@ -1,0 +1,20 @@
+<div class="nested-fields menus">
+  <%= f.hidden_field :id %>
+
+  <%= f.collection_select :name, f.object.selectable_menus, :name, :name, prompt: "何をしましたか？", class: 'form-control' %>
+
+    <%= link_to_add_association 'セット追加', f, :menu_sets,
+      class: 'btn btn-success p-0',
+      data: {
+        data_association_insertion_traversal: 'closest',
+        association_insertion_method: 'append' }
+     %>
+
+  <%= link_to_remove_association '削除', f, class: 'btn btn-default' %>
+
+  <div>
+    <%= f.fields_for :menu_sets do |menu_set| %>
+      <%= render 'menu_set_fields', f: menu_set %>
+    <% end %>
+  </div>
+</div>

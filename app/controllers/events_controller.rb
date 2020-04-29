@@ -25,7 +25,7 @@ class EventsController < UsersController
   def new
     @event = Event.new
     @menu = @event.menus.build
-    @menu_sets = @menu.menu_sets.build
+    @menu_set = @menu.menu_sets.build
   end
 
   # GET /events/1/edit

@@ -8,7 +8,12 @@ class MenusController < ApplicationController
   end
 
   def create
-    
+    Menu.create(menu_params)
+  end
+
+  private
+  def menu_params
+    paramas.requie(:menu).permit(:name)
   end
 
 end
