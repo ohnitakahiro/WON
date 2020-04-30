@@ -28,6 +28,7 @@
       <% end %>
       <%# いいね %>
     </div>
+    <%= render partial: "calender", locals: { events: @user_events } %>
     <div class="event-list">
     <%= @name %>さんの投稿一覧
     </div>
@@ -38,5 +39,4 @@
 
 </div>
 
-    <%= render partial: "calender", locals: { events: @user_events } %>
 <a href="#" id="btn_scroll_top"></a>
