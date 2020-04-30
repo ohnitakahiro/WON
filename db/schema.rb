@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_26_123457) do
+ActiveRecord::Schema.define(version: 2020_04_30_095728) do
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -32,6 +32,12 @@ ActiveRecord::Schema.define(version: 2020_04_26_123457) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "menu_selects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "menu_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "menu_sets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "menu_id"
     t.string "number"
@@ -50,17 +56,6 @@ ActiveRecord::Schema.define(version: 2020_04_26_123457) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_menus_on_event_id"
-  end
-
-  create_table "notes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "menu_id"
-    t.string "number"
-    t.string "number_unit"
-    t.string "rep"
-    t.string "rep_unit"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["menu_id"], name: "index_notes_on_menu_id"
   end
 
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -91,5 +86,4 @@ ActiveRecord::Schema.define(version: 2020_04_26_123457) do
   add_foreign_key "likes", "users"
   add_foreign_key "menu_sets", "menus"
   add_foreign_key "menus", "events"
-  add_foreign_key "notes", "menus"
 end

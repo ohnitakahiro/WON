@@ -1,0 +1,3 @@
+class MenuSelect < ApplicationRecord
+
+end

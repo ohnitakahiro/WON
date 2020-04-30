@@ -1,7 +1,7 @@
 <div class="nested-fields menus">
   <%= f.hidden_field :id %>
 
-  <%= f.collection_select :name, f.object.selectable_menus, :name, :name, prompt: "何をしましたか？", class: 'form-control' %>
+  <%= f.collection_select :name, MenuSelect.all, :menu_name, :menu_name, prompt: "何をしましたか？", class: 'form-control' %>
 
     <%= link_to_add_association 'セット追加', f, :menu_sets,
       class: 'btn btn-success p-0',
