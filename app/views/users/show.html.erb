@@ -17,26 +17,36 @@
         </div>
       </div>
     </div>
-    <div class="User__Like">
-      <%# いいね %>
-      <h3>いいねしている投稿</h3>
-      <% @user.liked_events.each do |event| %>
-        <%= link_to "/events/#{event.id}", class: "show-link", method: :get do %>
-          <%= event.user.name %>
-          <%= event.title %>
-        <% end %>
-      <% end %>
-      <%# いいね %>
-    </div>
-    <%= render partial: "calender", locals: { events: @user_events } %>
-    <div class="event-list">
-    <%= @name %>さんの投稿一覧
-    </div>
   </div>
-  <% @events.each do |event| %>
-    <%= render partial: "events/event", locals: { event: event } %>
-  <% end %>
+  
+  <ul class="tab">
+	<li class="select">記録</li>
+	<li>いいね</li>
+   <% if user_signed_in? %>
+      <% if current_page?(current_user) && current_page?(controller: 'users', action: 'show') %>
+        <li>カレンダー</li>
+      <% end %> 
+    <% end %> 
+  </ul>
 
+  <ul class="content">
+    <li>
+    <div class="event-list">
+    <% @events.each do |event| %>
+      <%= render partial: "events/event", locals: { event: event } %>
+    <% end %>
+
+    </li>
+    <li class="hide">
+      <% @user.liked_events.each do |event| %>
+        <%= render partial: "events/event", locals: { event: event } %>
+      <% end %>
+    </li>
+    <li class="hide">
+      <%= render partial: "calender", locals: { events: @user_events } %>
+    </li>
+  </ul>
+  
 </div>
 
 <a href="#" id="btn_scroll_top"></a>
