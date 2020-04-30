@@ -2,7 +2,8 @@
   width: 100%;
   background-color: black;
   height: 100%;
-  padding: 100px 0 100px 0;
+  padding: 100px 0 200px 0;
+  overflow: scroll;
   .Content{
     display: flex;
     padding: 15px;
@@ -24,6 +25,7 @@
         display: flex;
         justify-content: space-between;
         padding-bottom: 15px;
+        position: relative;
         &__Name{
           font-size: 40px;
           line-height: 80px;
@@ -35,7 +37,7 @@
         &__Option{
           position: absolute;
           font-size: 20px;
-          top: 240px;
+          top: 100px;
           right: 20px;
         }
       }
@@ -63,9 +65,6 @@
       color: white;
       font-size: 18px;
       margin-bottom: 20px;
-      h2{
-        border-bottom: 1px solid gray;
-      }
     }
     &__Img{
       margin: 0 auto;

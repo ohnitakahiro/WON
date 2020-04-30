@@ -18,7 +18,7 @@
         </div>
         <div class="Content__Body__Info__Option">
            <% if user_signed_in? && current_user.id == @event.user_id %>
-              <a href="#" id="EditBtn">編集</a> |
+              <%= link_to '編集', "/events/#{@event.id}/edit" %> |
               <%= link_to '削除', "/events/#{@event.id}", method: :delete %>
            <% end %>
         </div>
@@ -35,12 +35,20 @@
 
     <div class="Show__Main__Menu">
       <% @event.menus.each do |menu| %>
-        <h2><%= menu.name %></h2><br>
-        <% menu.menu_sets.each do |menu_set| %>
-          <%= menu_set.number %>ｋｇ
-          <%= menu_set.rep %>回
+        <div class="mb-4  border-bottom">
+          <h2 class="mb-2"><%= menu.name %></h2>
+
+          <% menu.menu_sets.each do |menu_set| %>
+            <%  if menu_set.number.present? %>  
+              <%= menu_set.number %>kg
+            <% end %>
+            <%  if menu_set.rep.present? %>  
+              <%= menu_set.rep %>回
+            <% end %>
+          <% end %>
+
+        </div>
         <% end %>
-      <% end %>
     </div>
 
     <div class="Show__Main__Img">
@@ -62,16 +70,3 @@
   </div>
   <%# いいね %>
 </div>
-
-
-<div class="EditRecord" id="EditRecord">
-    <div class="EditRecord＿Box">
-      <div class="Cancel" id="Cancel">
-        <i class="far fa-times-circle"></i>
-      </div>    
-      <h1>トレーニングを編集する</h1>
-      <div class="EditRecord＿Box＿Form">
-        <%= render 'form', event: @event %>
-      </div>
-    </div>
-  </div>
