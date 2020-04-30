@@ -36,10 +36,7 @@
     <%= render partial: "events/event", locals: { event: event } %>
   <% end %>
 
-
 </div>
 
-
-<%= render partial: "calender", locals: { events: @events } %>
-
+    <%= render partial: "calender", locals: { events: @user_events } %>
 <a href="#" id="btn_scroll_top"></a>

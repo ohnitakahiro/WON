@@ -7,12 +7,15 @@ class EventsController < UsersController
   def index
     @all_events = Event.all.includes(:user)
     @user = User.find(current_user.id)
+    
    #フォローしているユーザーを取得
     @follow_users = @user.followings.map { |f| f[:id] }
     @follow_users << current_user.id
     
-   #フォローユーザーのツイートを表示
-    @events = @all_events.where(user_id: @follow_users).order("created_at DESC")
+   #フォローユーザーの投稿のみ表示
+    @events_onlyfollow = @all_events.where(user_id: @follow_users).order("created_at DESC")
+    # 自分の投稿のみ
+    @events = Event.where(user_id: current_user.id)
   end
 
   # GET /events/1
