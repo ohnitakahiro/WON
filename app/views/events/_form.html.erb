@@ -13,31 +13,29 @@
         <% end %>
 
         <div class="field">
-          <%= f.label :"どんなトレーニングをしたの？" %>
-          <%= f.text_field :title, placeholder: "どんなトレーニングをしたの？",size: "30*30" %>
+          <%= f.label :"記録タイトル" %>
+          <%= f.text_field :title, placeholder: "どんなトレーニングをしましたか？",class: "form-control" %>
         </div>
 
         <div class="field">
           <%= f.label :"トレーニングメモ" %>
-          <%= f.text_area :body, size: "100*100" %>
+          <%= f.text_area :body,class: "form-control", placeholder: "トレーニングでの気づきを書こう" %>
         </div>
 
         <div class="field">
-          <%= f.file_field :image, placeholder: "Image", id: "image" %>
+          <%= f.file_field :image, placeholder: "Image", id: "image",class: "form-control-file" %>
         </div>
 
 
-      <div class="text-left mt-5">
-        <%= link_to_add_association 'メニュー追加', f, :menus,
-          class: 'btn btn-success  ml-3 p-1',
-          data: {
-            association_insertion_node: '#detail-association-insertion-point',
-            association_insertion_method: 'append' }
-        %>
-
-
+      <div class="d-flex justify-content-between">
+      <%= link_to_add_association 'メニュー追加', f, :menus,
+        class: 'btn btn-success  ml-1 p-1',
+        data: {
+          association_insertion_node: '#detail-association-insertion-point',
+          association_insertion_method: 'append' }
+      %>
+      <%= link_to '新規メニュー登録', new_menu_select_path, class: "btn btn-primary text-right" %>
       </div>
-
       <div class="form-group" id='detail-association-insertion-point'>
         <%= f.fields_for :menus do |menu| %>
           <%= render 'menu_fields', f: menu %>

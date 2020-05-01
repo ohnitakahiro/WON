@@ -1,14 +1,19 @@
 class MenuSelectsController < ApplicationController
   def new
-    @menuselect = MenuSelect.new
+    @menu_select = MenuSelect.new
   end
 
   def create
-    @menuselect = MenuSelect.new(menuselect_params)
+    @menu_select = MenuSelect.create(menu_select_params)
+    if @menu_select.save
+      redirect_to new_event_path, notice: '新規メニュー登録完了'
+    else
+      redirect_to new_menu_select_path, notice: '※登録失敗（既に登録されています）' 
+    end
   end
 
   private
-  def menuselect_params
-    params.require(:menu_name).permit(:menu_name)
+  def menu_select_params
+    params.require(:menu_select).permit(:menu_name)
   end
 end
