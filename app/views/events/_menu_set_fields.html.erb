@@ -1,7 +1,7 @@
 <div class="nested-fields">
   <%= f.hidden_field :id %>
-  <%= f.collection_select :number, f.object.selectable_menus, :number, :number, prompt: "何kg？", class: 'form-control' %>
-  <%= f.collection_select :rep, f.object.selectable_menus, :rep, :rep, prompt: "何回？", class: 'form-control' %>
+  <%= f.text_field :number, :placeholder => "何kg？", :size => "7*30" %>
+  <%= f.text_field :rep , :placeholder => "何回？", :size => "7*30" %>
   <%= link_to_remove_association '削除', f, class: 'btn btn-default' %>
 
 </div>

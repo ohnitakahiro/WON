@@ -24,53 +24,55 @@
       </div>
     <% end %>
     
-    <header class="Header">
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <header class="Header">
         <%= link_to  "/users/#{current_user.id}" , class: "Header__MyImg"  do %>
           <div class="Header__MyImg">
             <img src="<%= current_user.image %>" class="Header__MyImg">
           </div> 
         <% end %>
-      <% end %>
 
-      <% if user_signed_in? %>
-        <% if current_page?(current_user) && current_page?(controller: 'users', action: 'show') %>
-          <%= link_to  "/users/edit" , class: "Header__User"  do %>
-            <div class="Header__User"><i class="fas fa-user-edit"></i></div>
+        <% if user_signed_in? %>
+          <% if current_page?(current_user) && current_page?(controller: 'users', action: 'show') %>
+            <%= link_to  "/users/edit" , class: "Header__User"  do %>
+              <div class="Header__User"><i class="fas fa-user-edit"></i></div>
+            <% end %> 
           <% end %> 
-        <% end %> 
-      <% end %>
+        <% end %>
 
-      <div class="Header__Logo">WON</div>
-    </header>
+        <div class="Header__Logo">
+        <%= image_tag 'WONロゴのみ.png', size: '80x80' %>
+        </div>
+      </header>
+    <% end %>
 
     <%= yield %>
 
 
-    <footer class="Footer">
+    <% if user_signed_in? %>
+      <footer class="Footer">
 
-      <%= link_to  root_path , id: "HomeIcon"  do %>
-        <i class="fas fa-home"></i>
-      <% end %>
+        <%= link_to  root_path , id: "HomeIcon"  do %>
+          <i class="fas fa-home"></i>
+        <% end %>
 
-      <%= link_to  users_path , id: "UsersIcon"  do %>
-        <i class="fas fa-users"></i>
-      <% end %>
+        <%= link_to  users_path , id: "UsersIcon"  do %>
+          <i class="fas fa-users"></i>
+        <% end %>
 
-      <% if user_signed_in? %>
         <% if current_page?(current_user) && current_page?(controller: 'users', action: 'show') %>
           <div class="CalenderIcon" id="CalenderIcon">
             <i class="far fa-calendar-alt"></i>
           </div>
         <% end %> 
-      <% end %> 
       
 
-      <%= link_to  destroy_user_session_path, id: "SignOutIcon",  method: :delete  do %>
-        <i class="fas fa-sign-out-alt"></i>
-      <% end %>
+        <%= link_to  destroy_user_session_path, id: "SignOutIcon",  method: :delete  do %>
+          <i class="fas fa-sign-out-alt"></i>
+        <% end %>
 
-    </footer>
+      </footer>
+    <% end %> 
 
   </body>
 </html>

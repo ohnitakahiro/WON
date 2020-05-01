@@ -1,40 +1,49 @@
-<div class="contents row">
-  <div class="container">
-    <h2>Sign up</h2>
-    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <%= devise_error_messages! %>
-       <div class="field">
-        <%= f.label :name %> <em>(6 characters maximum)</em><br />
-        <%= f.text_field :name, autofocus: true, maxlength: "6" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password %>
-        <% if @validatable %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
-
-      <div class="field">
-        <%= f.file_field :image, placeholder: "Image", id: "image" %><br />
-      </div>
-
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
-    <% end %>
-    既にアカウントをお持ちの方は→
-    <%= link_to 'ログインする', new_user_session_path %>
+<div class="wrapper body-inverse"> <!-- wrapper -->
+    <div class="row d-flex align-items-center mr-5 ml-5">
+    <!-- Sign Up form -->
+    
+    <div class="col-sm-7">
+    <%= image_tag "WONロゴ1.png", size: '600x600' %>
+    </div>
+    <div class="col-sm-5 bg-light p-5 rounded">
+    <div class="form-white">
+      <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+        <%= devise_error_messages! %>
+        <div class="form-group">
+          <%= f.label :"ユーザー名" %> <em>(6 characters maximum)</em>
+          <%= f.text_field :name, autofocus: true, maxlength: "6", class: "form-control", id: "username", placeholder: "Username" %>
+        </div>
+        <div class="form-group">
+            <%= f.label :"プロフィール画像の設定" %>
+            <%= f.file_field :image, placeholder: "Image", id: "image" %><br />
+          </div>
+        <div class="form-group">
+          <%= f.label :"メールアドレス" %>
+          <%= f.email_field :email, class: "form-control", id: "email2", placeholder: "Enter email" %>
+        </div>
+        <div class="form-group">
+        <div class="row">
+          <div class="col-sm-6">
+          <%= f.label :"パスワード入力" %>
+          <% if @validatable %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control", id: "password2", placeholder: "Password" %>
+          </div>
+          <div class="col-sm-6">
+          <%= f.label :"パスワード再入力" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", id: "password3", placeholder: "Repeat password" %>
+          </div>
+          
+        </div>
+        </div>
+        <div class="actions">
+          <%= f.submit "アカウント新規作成",class: " btn btn-block btn-success btn-xxl" %>
+        </div>
+      <% end %>
+      既にアカウントをお持ちの方は
+      <%= link_to 'ログインする', new_user_session_path,class: " btn btn-block btn-primary btn-xxl" %>
+    </div>
+    </div>
   </div>
-</div>
+</div> <!-- / wrapper -->

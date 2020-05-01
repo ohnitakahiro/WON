@@ -22,6 +22,9 @@
 @import "users_show";
 @import "users_follow";
 @import "events";
+@import "users/session_new";
+@import "users/registrations_new";
+@import "users/registrations_edit";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -38,7 +41,9 @@
   text-align: center;
   line-height: 20px;
 }
-
+body{
+  background-color: black;
+}
 .Header{
   z-index: 100;
   align-items: center;
@@ -70,8 +75,7 @@
     }
   }
   &__Logo{
-    font-size: 50px;
-    font-family: cursive;
+
   }
 }
 

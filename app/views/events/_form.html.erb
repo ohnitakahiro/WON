@@ -1,74 +1,65 @@
 <div class="NewRecord＿Box">
-<%= form_with(model: event, local: true) do |f| %>
+  <%= form_with(model: event, local: true) do |f| %>
+    <% if event.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-
-
-
-
-<% if event.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-        <ul>
-        <% event.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+            <ul>
+            <% event.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
         <% end %>
-        </ul>
+
+        <div class="field">
+          <%= f.label :"どんなトレーニングをしたの？" %>
+          <%= f.text_field :title, placeholder: "どんなトレーニングをしたの？",size: "30*30" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :"トレーニングメモ" %>
+          <%= f.text_area :body, size: "100*100" %>
+        </div>
+
+        <div class="field">
+          <%= f.file_field :image, placeholder: "Image", id: "image" %>
+        </div>
+
+
+      <div class="text-left mt-5">
+        <%= link_to_add_association 'メニュー追加', f, :menus,
+          class: 'btn btn-success  ml-3 p-1',
+          data: {
+            association_insertion_node: '#detail-association-insertion-point',
+            association_insertion_method: 'append' }
+        %>
+
+
       </div>
-    <% end %>
 
-    <div class="field">
-      <%= f.label :"どんなトレーニングをしたの？" %>
-      <%= f.text_field :title %>
+      <div class="form-group" id='detail-association-insertion-point'>
+        <%= f.fields_for :menus do |menu| %>
+          <%= render 'menu_fields', f: menu %>
+          
+        <% end %>
+      </div>
+
+
+    <div class="Date_form">
+      <div class="field mr-5">
+        <%= f.label :"開始日" %>
+        <%= f.datetime_select :start_date %>
+      </div>
+
+      <div class="field">
+        <%= f.label :"終了日" %>
+        <%= f.datetime_select :end_date %>
+      </div>
     </div>
-
-    <div class="field">
-      <%= f.label :"トレーニングメモ" %>
-      <%= f.text_field :body, placholder:"トレーニングの記録を残そう！" , id: "body"%>
+    <div class="input">
+      <%= f.submit "WORK OUTを保存" , id: "Newrecord", class: "btn btn-success"%>
     </div>
-
-    <div class="field">
-      <%= f.file_field :image, placeholder: "Image", id: "image" %>
-    </div>
-
-
-
-
-
-
-  <div class="text-left mt-5">
-    <%= link_to_add_association 'メニュー追加', f, :menus,
-      class: 'btn btn-success  ml-3 p-1',
-      data: {
-        association_insertion_node: '#detail-association-insertion-point',
-        association_insertion_method: 'append' }
-     %>
-
-
-  </div>
-
-  <div class="form-group" id='detail-association-insertion-point'>
-    <%= f.fields_for :menus do |menu| %>
-      <%= render 'menu_fields', f: menu %>
-      
-    <% end %>
-  </div>
-
-
-  <div class="Date_form">
-    <div class="field mr-5">
-      <%= f.label :"開始日" %>
-      <%= f.datetime_select :start_date %>
-    </div>
-
-    <div class="field">
-      <%= f.label :"終了日" %>
-      <%= f.datetime_select :end_date %>
-    </div>
-  </div>
-  <div class="input">
-    <%= f.submit "WORK OUTを保存" , id: "Newrecord", class: "btn btn-success"%>
-  </div>
   <% end %>
 </div>
 
