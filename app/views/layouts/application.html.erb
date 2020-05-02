@@ -18,21 +18,25 @@
   </head>
 
   <body data-turbolinks="false">
+
     <% if notice%>
       <div id="notice">
         <%= notice %>
       </div>
     <% end %>
+
+
     
+    <div id="loading">
+      <div class="spinner"></div>
+    </div>
     <% if user_signed_in? %>
       <header class="Header">
         <%= link_to  "/users/#{current_user.id}" , class: "Header__MyImg"  do %>
           <div class="Header__MyImg">
             <img src="<%= current_user.image %>" class="Header__MyImg">
           </div> 
-        <% end %>
 
-        <% if user_signed_in? %>
           <% if current_page?(current_user) && current_page?(controller: 'users', action: 'show') %>
             <%= link_to  "/users/edit" , class: "Header__User"  do %>
               <div class="Header__User"><i class="fas fa-user-edit"></i></div>
