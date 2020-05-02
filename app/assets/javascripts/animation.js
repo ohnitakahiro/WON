@@ -1,10 +1,6 @@
 
 $(function(){ 
   // ロード
-  window.onload = function() {
-    const spinner = document.getElementById('loading');
-    spinner.classList.add('loaded');
-  }
   // 初期画面
   $(function() {
     setTimeout(function(){

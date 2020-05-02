@@ -25,11 +25,6 @@
       </div>
     <% end %>
 
-
-    
-    <div id="loading">
-      <div class="spinner"></div>
-    </div>
     <% if user_signed_in? %>
       <header class="Header">
         <%= link_to  "/users/#{current_user.id}" , class: "Header__MyImg"  do %>
