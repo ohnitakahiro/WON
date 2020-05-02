@@ -72,7 +72,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   gem 'fullcalendar-rails'
   gem 'momentjs-rails'
   gem 'cocoon'
-  
+  gem "aws-sdk-s3", require: false #追記
+
 group :production do
   gem 'pg'
 end
