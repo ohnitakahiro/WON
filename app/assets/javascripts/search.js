@@ -1,6 +1,6 @@
 $(function() {
   function addUser(user) {
-    let html = `
+    var html = `
       <table>
         <tr>
           <td>  <img src="${user.image.url}" class="Content__MyImg"> </td>
@@ -13,7 +13,7 @@ $(function() {
   }
 
   function addNoUser() {
-    let html = `
+    var html = `
       <div class="chat-group-user clearfix">
         <p class="chat-group-user__name">ユーザーが見つかりません</p>
       </div>
@@ -21,14 +21,14 @@ $(function() {
     $("#user-search-result").append(html);
   }
     // 初期HTML記述をセット
-  let defaultHTML;
+  var defaultHTML;
   function DefaultSave() {
     defaultHTML = document.body.innerHTML;
   }
   
 
   $("#user-search-field").on("keyup", function() {
-    let input = $("#user-search-field").val();
+    var input = $("#user-search-field").val();
     $.ajax({
       type: "GET",
       url: "/users",
