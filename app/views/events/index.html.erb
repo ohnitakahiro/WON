@@ -2,6 +2,17 @@
   <% @events_onlyfollow.each do |event| %>
     <%= render partial: "event", locals: { event: event } %>
   <% end %>
+  <% unless @events_onlyfollow.present? %>
+  <div class="icon"><%= image_tag "WONロゴ1.png", size: '300x300' %></div>
+  <div class="caption text-center">
+    <h1>Welocome to WON</h1>
+    <h3>Work out Noteでトレーニングを記録しよう</h3>
+    <h3>右下の<i class="far fa-edit"></i>から投稿画面へ</h3>
+  </div>
+  
+  
+  
+  <% end %>
 
 <%= link_to  new_event_path , id: "NewRecordBtn", class:"NewBtn" do %>
   <i class="far fa-edit"></i>
