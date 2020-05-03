@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
   belongs_to :user
-  validates :body, presence: true
+  validates :title, presence: true
   mount_uploader :image, ImageUploader
 
   # いいね

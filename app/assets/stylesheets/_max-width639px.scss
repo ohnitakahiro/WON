@@ -1,0 +1,128 @@
+@media screen and (max-width:639px) {
+  /*スマホ用のcssを記述*/
+  .won-logo{
+    display: none;
+  }
+  
+// 初期画面
+
+.start #start-logo {
+  position: absolute;
+  top:50%;
+  width: 50%;
+  width: 300px;
+  height: 300px;
+}
+// 本文
+
+.Header{
+  height: 50px;
+  padding: 20px;
+  &__MyImg{
+    height: 30px;
+    width: 30px; 
+  }
+  &__User{
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    color: green;
+    a{
+      color: green;
+    }
+  }
+  &__Logo{
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.Footer{
+  height: 50px;
+  padding: 15px;
+  font-size: 25px;
+}
+
+.Main{
+  padding:50px 0;
+  .Content{
+    &__MyImg{
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    }
+  }
+.welcome{
+  font-size: 50px;
+  color: green;
+  line-height: 300px;
+  font-weight: bold;
+}
+.caption{
+  top: 25%;
+}
+.caption h1{
+  font-size: 3rem;
+}
+.caption h3 {
+  font-size: 1.5rem;
+}
+.icon{
+  width: 300px;
+}
+  // 以下ボタン系
+  .NewBtn{
+    font-size: 25px;
+    border-radius: 50%;
+    height: 65px;
+    line-height: 65px;
+    width: 65px;
+    bottom: 70px;
+    right: 20px;
+  }
+}
+#btn_scroll_top {
+  right:50% ;
+  bottom: 65px;
+}
+// 投稿画面
+.NewRecord{
+  padding:60px 10px 60px 10px !important;
+}
+.NewRecord＿Box{
+  padding: 5px !important;
+  h1{
+    font-size: 18px !important;
+    padding: 5px;
+  }
+  .Date_form{
+    flex-direction: column;
+  }
+}
+#text{
+  width: 100%;
+}
+#Newrecord{
+  height: 50px;
+  width: 170px;
+  border-radius: 10px;
+  &:hover{
+    background-color: rgb(98, 151, 114);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }

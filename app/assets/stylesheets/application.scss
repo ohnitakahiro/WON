@@ -23,6 +23,7 @@
 @import "users_follow";
 @import "events";
 @import "users/registrations_new";
+@import "_max-width639px";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -40,6 +41,10 @@
   line-height: 20px;
 }
 
+.won-logo{
+  height: 600px;
+  width: 600px;
+}
 // 初期画面
 .start {
 	background: #FFF;
@@ -92,6 +97,10 @@ body{
     a{
       color: green;
     }
+  }
+  &__Logo{
+    height: 80px;
+    width: 80px;
   }
 }
 
