@@ -67,9 +67,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   gem 'sprockets', '3.7.2'  
   gem 'devise'
   gem 'carrierwave'
-  gem 'fog-aws'
   gem 'mini_magick' 
   gem 'jquery-rails', '4.3.3'
   gem 'fullcalendar-rails'
   gem 'momentjs-rails'
   gem 'cocoon'
+  gem 'fog-aws'
+
+group :production do
+  gem 'pg'
+end
