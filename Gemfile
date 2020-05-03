@@ -73,6 +73,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   gem 'momentjs-rails'
   gem 'cocoon'
   gem 'fog-aws'
+  gem 'aws-sdk-s3', require: false
 
 group :production do
   gem 'pg'
