@@ -19,3 +19,12 @@
 //= require turbolinks
 //= require_tree .
 
+$(function(){
+  var loc = location.pathname;
+  if(loc == "/"){
+    $("#HomeIcon").addClass("green")
+  } else if (loc == "/users"){
+    $("#UsersIcon").addClass("green")
+  }
+
+});

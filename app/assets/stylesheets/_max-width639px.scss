@@ -22,16 +22,6 @@
     height: 30px;
     width: 30px; 
   }
-  &__User{
-    font-size: 30px;
-    position: absolute;
-    top: 10px;
-    left: 50px;
-    color: green;
-    a{
-      color: green;
-    }
-  }
   &__Logo{
     height: 40px;
     width: 40px;
@@ -111,8 +101,104 @@
     background-color: rgb(98, 151, 114);
   }
 }
+// イベント詳細画面
+.Show{
+  .Content{
+    &__MyImg{
+      height: 60px !important;
+      width: 60px !important;
+    }
+    &__Body{
+      &__Info{
+        &__Name{
+          font-size: 26px !important;
+          line-height: 60px !important;
+        }
+        &__Date{
+          font-size: 10px !important;
+        }
+        &__Option{
+          font-size: 14px !important;
+          top: 70px !important;
+          right: 5px !important;
+        }
+      }
+    }
+  }
+  &__Main{
+    padding: 0 10px 0 10px !important;
+    &__Title{
+      h1{
+        font-size: 30px !important;
+      }
+    }
+    &__Menu{
+      font-size: 14px !important;
+    }
+  }
+  &__Like{
+    margin: 0 5px !important;
+    font-size: 12px !important;
+    > h3, h2, input{
+      margin-bottom: 5px !important;
+    }
+    input{
+      padding: 8px !important;
+    }
+  }
+}
+// ユーザー検索
+.UsersIndex{
+  font-size: 20px;
+  text-align: center;
+  .User-search{
+    margin: 5px auto !important;
+    width: 300px;
+  }
+  width: 100% !important;
+  margin: 0 auto;
+  table{
+    width: 90% !important;
+  }
+}
+// ユーザー詳細
 
-
+.User{
+  padding-bottom: 0 !important;
+  &__Profile{
+    display: flex;
+    flex-direction: column !important;
+    &__Img{
+      border-radius: 50%;
+      height: 80px !important;
+      width: 80px !important;
+    }
+    &__Name{
+      font-size: 40px !important;
+      line-height: 40px !important;
+    }
+    &__Info{
+      display: flex;
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+      flex-direction: column;
+      margin-top: 5px;
+      &__Date{
+        font-size: 12px !important;
+        margin-top: 5px;
+      }
+      &__Follow{
+        font-size: 20px !important;
+        margin-top: 5px;
+        .stats{
+          margin-top: 10px !important;
+        }
+      }
+    }
+    
+  }
+  
+}
 
 
 

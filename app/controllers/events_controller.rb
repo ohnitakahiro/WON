@@ -56,10 +56,9 @@ class EventsController < UsersController
   # PATCH/PUT /events/1.json
   def update
     @event.destroy
-    new
     @event = Event.new(event_params)
     respond_to do |format|
-      if @event.save(event_params)
+      if @event.save
         format.html { redirect_to @event, notice: '記録の変更完了' }
         format.json { render :show, status: :ok, location: @event }
       else

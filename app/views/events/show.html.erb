@@ -18,7 +18,7 @@
         </div>
         <div class="Content__Body__Info__Option">
            <% if user_signed_in? && current_user.id == @event.user_id %>
-              <%= link_to '編集', "/events/#{@event.id}/edit" %> |
+              <%#= link_to '編集', "/events/#{@event.id}/edit" %> 
               <%= link_to '削除', "/events/#{@event.id}", method: :delete %>
            <% end %>
         </div>
@@ -40,10 +40,11 @@
 
           <% menu.menu_sets.each do |menu_set| %>
             <%  if menu_set.number.present? %>  
-              <%= menu_set.number %>kg
+              <%= menu_set.number %>kg ×
             <% end %>
             <%  if menu_set.rep.present? %>  
               <%= menu_set.rep %>回
+              /
             <% end %>
           <% end %>
 

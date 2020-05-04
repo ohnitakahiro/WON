@@ -89,10 +89,6 @@ body{
     
   }
   &__User{
-    font-size: 40px;
-    position: absolute;
-    top: 10px;
-    left: 50px;
     color: green;
     a{
       color: green;
@@ -117,10 +113,12 @@ body{
   bottom: 0;
   width: 100%;
   font-size: 40px;
-  color: green;
   a{
-    color: green;
+    color: rgb(155, 155, 155);
   }
+      .green{
+        color: green;
+      }
 
 }
 

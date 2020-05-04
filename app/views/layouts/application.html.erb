@@ -32,11 +32,7 @@
             <img src="<%= current_user.image %>" class="Header__MyImg">
           </div> 
 
-          <% if current_page?(current_user) && current_page?(controller: 'users', action: 'show') %>
-            <%= link_to  "/users/edit" , class: "Header__User"  do %>
-              <div class="Header__User"><i class="fas fa-user-edit"></i></div>
-            <% end %> 
-          <% end %> 
+          
         <% end %>
 
         <div class="Header__Logo">
@@ -58,6 +54,12 @@
         <%= link_to  users_path , id: "UsersIcon"  do %>
           <i class="fas fa-users"></i>
         <% end %>
+
+        <% if current_page?(current_user) && current_page?(controller: 'users', action: 'show') %>
+          <%= link_to  "/users/edit" , class: "Header__User"  do %>
+            <div class="Header__User"><i class="fas fa-user-edit"></i></div>
+          <% end %> 
+        <% end %> 
       
         <%= link_to  destroy_user_session_path, id: "SignOutIcon",  method: :delete  do %>
           <i class="fas fa-sign-out-alt"></i>
