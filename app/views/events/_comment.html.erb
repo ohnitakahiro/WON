@@ -1,0 +1,18 @@
+<%= link_to "/users/#{comment.user_id}", class: "show-link" , method: :get do %>
+  <div class="Content">
+    <div class="Content__MyImg">
+      <img src="<%= comment.user.image %>" class="Content__MyImg">
+    </div>
+    <div class="Content__Body">
+      <div class="Content__Body__Info">
+        <div class="text-sm"><%= comment.user.name %></div>
+        <div class="Content__Body__Info__Date">
+          <%= l comment.created_at , format: :short %>
+        </div>
+      </div>
+      <div class="Content__Body__TextField">
+        <%= simple_format(comment.text) %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
    resources :relationships,   only: [:create, :destroy]
    root to: "events#index"
    resources :events do
+    resources :comments, only: :create
     resources :menus, only: [:index, :new, :create]     
     resources :likes, only: [:create, :destroy]
   end

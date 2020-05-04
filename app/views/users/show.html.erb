@@ -21,6 +21,7 @@
   
   <ul class="tab">
 	<li class="select">記録</li>
+	<li>コメント</li>
 	<li>いいね</li>
    <% if user_signed_in? %>
       <% if current_page?(current_user) && current_page?(controller: 'users', action: 'show') %>
@@ -35,13 +36,20 @@
     <% @events.each do |event| %>
       <%= render partial: "events/event", locals: { event: event } %>
     <% end %>
-
     </li>
+
+    <li class="hide">
+      <% @user.comments.each do |comment| %>
+        <%= render partial: "events/comment", locals: { comment: comment } %>
+      <% end %>
+    </li>
+
     <li class="hide">
       <% @user.liked_events.each do |event| %>
         <%= render partial: "events/event", locals: { event: event } %>
       <% end %>
     </li>
+
     <li class="hide">
       <%= render partial: "calender", locals: { events: @user_events } %>
     </li>

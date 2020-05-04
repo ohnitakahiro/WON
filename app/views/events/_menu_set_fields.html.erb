@@ -4,6 +4,6 @@
   <%= f.collection_select :number_unit, NumberUnit.all, :number_unit, :number_unit, prompt: "単位", class: 'form-control' %>
   <%= f.text_field :rep , :placeholder => "回数", :size => "7*30" %>
   <%= f.collection_select :rep_unit, RepUnit.all, :rep_unit, :rep_unit, prompt: "単位", class: 'form-control' %>
-  <%= link_to_remove_association '削除', f, class: 'btn btn-danger btn-sm m-1' %>
+  <%= link_to_remove_association '削除', f, class: 'btn btn-outline-secondary btn-sm p-0' %>
 
 </div>

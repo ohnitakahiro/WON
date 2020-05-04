@@ -22,6 +22,8 @@ class EventsController < UsersController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
+    @comment = Comment.new
+    @comments = @event.comments.includes(:user)
   end
 
   # GET /events/new

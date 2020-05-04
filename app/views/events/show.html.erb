@@ -70,4 +70,18 @@
     <% end %>
   </div>
   <%# いいね %>
+  <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <%= render partial: "comment", locals: { comment: comment } %>
+        <% end %>
+      <% end %>
+    </div>
+  <div class="container comment-form">
+      <%= form_with(model: [@event, @comment]) do |f| %>
+        <%= f.text_area :text, placeholder: "コメントする", rows: "1" , class: "form-control"%>
+        <%= f.submit "コメント送信" , class: "btn btn-outline-success btn-block mt-2" %>
+    <% end %>
+  </div>
 </div>

@@ -8,7 +8,7 @@
       <div class="Content__Body__Info">
         <div class="Content__Body__Info__Name"><%= event.user.name %></div>
         <div class="Content__Body__Info__Date">
-          投稿日時：<%= l event.end_date , format: :short %>
+          投稿日時：<%= l event.created_at , format: :short %>
         </div>
       </div>
       <div class="Content__Body__TextField">
@@ -16,8 +16,14 @@
         <%= simple_format(event.body) %>
         <img src="<%= event.image if event.image.present? %>">
       </div>
-    <div class="Content__Body__Like">
-      <i class="fas fa-thumbs-up"></i> <%= event.liked_users.count %>
+    <div class="Content__Body__Reaction">
+      <div class="Content__Body__Reaction-comment">
+        <i class="far fa-comment m1-2"></i> <%= event.comments.count %>
+      </div>
+      <div class="Content__Body__Reaction-like">
+        <i class="fas fa-thumbs-up m1-2"></i> <%= event.liked_users.count %>
+      </div>
+
     </div>
     </div>
   </div>

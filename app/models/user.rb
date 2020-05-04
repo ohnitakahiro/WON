@@ -42,5 +42,8 @@ class User < ApplicationRecord
     self.likes.exists?(event_id: event.id)
   end
 
+  # コメント
+  has_many :comments
+
   mount_uploader :image, ImageUploader
 end

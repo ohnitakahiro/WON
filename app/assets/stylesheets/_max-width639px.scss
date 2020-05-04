@@ -103,6 +103,7 @@
 }
 // イベント詳細画面
 .Show{
+  padding-top: 50px !important;
   .Content{
     &__MyImg{
       height: 60px !important;
@@ -192,6 +193,7 @@
         margin-top: 5px;
         .stats{
           margin-top: 10px !important;
+          margin-bottom: 5px !important;
         }
       }
     }
@@ -199,8 +201,17 @@
   }
   
 }
+.tab li{
+  font-size: 14px !important;
+  padding: 5px !important;
+}
 
-
+.container.comment-form{
+  position: fixed;
+  padding-bottom: 5px;
+  bottom: 50px;
+  background-color: black;
+}
 
 
 

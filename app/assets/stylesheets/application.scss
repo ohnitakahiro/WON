@@ -165,9 +165,16 @@ body{
           font-size: 30px !important;
         }
       }
-      .Content__Body__Like{
+      .Content__Body__Reaction{
         font-size: 16px;
         color: green;
+        display: flex;
+        &-comment{
+          margin-right: 30px ;
+        }
+        &-like{
+
+        }
       }
     }
   }
