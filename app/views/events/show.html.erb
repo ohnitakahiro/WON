@@ -40,10 +40,10 @@
 
           <% menu.menu_sets.each do |menu_set| %>
             <%  if menu_set.number.present? %>  
-              <%= menu_set.number %>kg ×
+              <%= menu_set.number %><%= menu_set.number_unit %>×
             <% end %>
             <%  if menu_set.rep.present? %>  
-              <%= menu_set.rep %>回
+              <%= menu_set.rep %><%= menu_set.rep_unit %>
               /
             <% end %>
           <% end %>
