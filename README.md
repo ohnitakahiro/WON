@@ -1,24 +1,35 @@
 # README
+## Name
+WON
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
+トレーニング記録アプリ
+-  トレーニングした内容をTwitterのようなイメージで、記録することができる
 
-Things you may want to cover:
+-  種目名、重さ、セット数、回数まで記録できる。例えばベンチプレスを100kgを10回、5セットやったという内容を記録できる。
 
-* Ruby version
+-  トレーニングをマイページでカレンダー管理できる。トレーニングのローテンションを組みやすくする。
+## Description
+### 機能
+-  記録
+- カレンダー
+- フォロー
+- いいね
+- コメント
 
-* System dependencies
+### こだわった点
+トレーニングをする上で、カレンダー管理できるツールが無かったので作りました。  
+  
+カレンダーには、jqueryのfullcalendarを使い実装しました。日本語の文献が少なく、やり方がわからなかったです。  
+記録一覧はフォローしたユーザーのみ、カレンダーには自分の記録のみにすることが難しかったです。  
+  
+トレーニングの記録をする際に、動的にフォームを追加or削除  
+記録の中に、メニュー、セットを入れ込む親子孫関係のフォームを作るのに苦戦しました。
 
-* Configuration
 
-* Database creation
+## Demo
+トレーニングを記録する
+<img src="app/assets/images/demo.gif">
+カレンダー機能
+<img src="app/assets/images/demo2.gif">
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
