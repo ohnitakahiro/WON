@@ -34,7 +34,8 @@ WON
 トレーニングの記録をする際に、動的にフォームを追加or削除  
 記録の中に、メニュー、セットを入れ込む親子孫関係のフォームを作るのに苦戦しました。
 
-
+## URL
+https://wonbyohni.herokuapp.com/
 ## Demo
 トレーニングを記録する
 <img src="app/assets/images/demo.gif">
