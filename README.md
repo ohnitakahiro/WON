@@ -36,6 +36,12 @@ WON
 
 ## URL
 https://wonbyohni.herokuapp.com/
+
+テストアカウント
+- email: test@gmail.com
+- pass: test00
+- username: test
+
 ## Demo
 トレーニングを記録する
 <img src="app/assets/images/demo.gif">
